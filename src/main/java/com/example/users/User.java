@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Getter;
  * ユーザのドメインクラス
  */
 @AllArgsConstructor
-public class user {
+public class User {
     // ユーザID
     @Getter
     private int userId;
