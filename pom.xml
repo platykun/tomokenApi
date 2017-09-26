@@ -24,6 +24,41 @@
     <java.version>1.8</java.version>
 </properties>
 
+<profiles>
+    <profile>
+        <id>local</id>
+        <activation>
+            <!-- デフォルト設定 -->
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <build>
+            <resources>
+                <resource>
+                    <directory>src/env/local/</directory>
+                </resource>
+                <resource>
+                    <directory>src/main/resources/</directory>
+                </resource>
+            </resources>
+        </build>
+    </profile>
+    <profile>
+        <id>prod</id>
+        <build>
+            <resources>
+                <resource>
+                    <directory>src/env/prod/</directory>
+                </resource>
+                <resource>
+                    <directory>src/main/resources/</directory>
+                </resource>
+            </resources>
+        </build>
+
+    </profile>
+</profiles>
+
+
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>

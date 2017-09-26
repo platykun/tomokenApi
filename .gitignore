@@ -26,3 +26,6 @@ nbdist/
 .idea/
 target
 *.iml
+
+### important config
+src/main/resources/secret.properties
