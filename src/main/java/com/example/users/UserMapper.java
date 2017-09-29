@@ -22,4 +22,14 @@ public class UserMapper {
                 .forEach(e -> users.add(toDomain(e)));
         return users;
     }
+
+    public static UserEntity toEntity(User user){
+        UserEntity userEntity = new UserEntity(
+                user.getUserId()
+                ,user.getPassword()
+                ,user.getEmail()
+        );
+
+        return userEntity;
+    }
 }

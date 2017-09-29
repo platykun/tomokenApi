@@ -8,7 +8,7 @@
 <version>0.0.1-SNAPSHOT</version>
 <packaging>jar</packaging>
 
-<name>trpg</name>
+<name>tomokenApi</name>
 <description>Demo project for Spring Boot</description>
 
 <parent>
@@ -98,6 +98,20 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-web</artifactId>
     </dependency>
+
+    <!-- for test -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.skyscreamer</groupId>
+        <artifactId>jsonassert</artifactId>
+        <version>1.3.0</version>
+        <scope>test</scope>
+    </dependency>
+
 </dependencies>
 
 <build>

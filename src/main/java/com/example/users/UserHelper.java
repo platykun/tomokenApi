@@ -8,7 +8,11 @@ import java.util.List;
  */
 public class UserHelper {
     public static UserForm toForm(User user){
-        UserForm userForm = new UserForm(user.getUserId(), user.getPassword(), user.getEmail());
+        UserForm userForm = new UserForm(
+                user.getUserId()
+                , user.getPassword()
+                , user.getEmail()
+        );
         return userForm;
     }
 
@@ -17,5 +21,14 @@ public class UserHelper {
         users.stream()
                 .forEach(u -> userForms.add(toForm(u)));
         return userForms;
+    }
+
+    public static User toEntity(UserForm userForm){
+        User user = new User(
+                userForm.getId()
+                , userForm.getPassword()
+                , userForm.getMail()
+        );
+        return user;
     }
 }

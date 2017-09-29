@@ -9,7 +9,10 @@ import org.springframework.context.annotation.PropertySource;
  *
  */
 @SpringBootApplication
-@PropertySource("classpath:env.properties")
+@PropertySource({
+        "classpath:env.properties"
+        ,"classpath:secret.properties"
+})
 public class TomokenApi
 {
     public static void main( String[] args )

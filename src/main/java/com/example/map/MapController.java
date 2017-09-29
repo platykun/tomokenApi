@@ -1,5 +1,6 @@
 package com.example.map;
 
+import com.example.domain.config.ApiProperties;
 import com.example.map.json.ElevationResultJson;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -21,11 +22,8 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping(value="api/map/")
 public class MapController {
 
-    @Value("${google.api.key}")
-    private String googleApiKey;
-
-    @Value("${test}")
-    private String test;
+    @Autowired
+    ApiProperties apiProperties;
 
     @RequestMapping(value="test", method=RequestMethod.GET)
     public ElevationResultJson get(){
@@ -35,6 +33,7 @@ public class MapController {
 
         Hoge response = restTemplate.getForObject("http://localhost:8090/api/users/1", Hoge.class);
 
+        String googleApiKey = apiProperties.getGoogleKey();
         String url = "https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=" + googleApiKey;
         ElevationResultJson elevationResultJson = restTemplate.getForObject(url, ElevationResultJson.class);
 
