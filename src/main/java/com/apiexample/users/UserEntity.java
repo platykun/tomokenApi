@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +19,9 @@ public class UserEntity {
     // ユーザID
     @Id
     private int id;
+
+    // ユーザ名
+    private String username;
 
     // パスワード
     private String password;

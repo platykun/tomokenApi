@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +33,25 @@ public class UsersService {
     public User getUserById(int id){
         UserEntity userEntity = userRepository.getOne(id);
         User user = UserMapper.toDomain(userEntity);
+
+        return user;
+    }
+
+    /**
+     * ユーザ名をもとにユーザを取得する。
+     *
+     * @param username ユーザ名
+     * @return ユーザ
+     */
+    public User getUserByUsername(String username){
+        List<UserEntity> userEntity = userRepository.findByUsername(username);
+
+        //ユーザが1件ではなかった場合はDB不正とする。
+        if(userEntity.size() != 1){
+            return null;
+        }
+
+        User user = UserMapper.toDomain(userEntity.get(0));
 
         return user;
     }

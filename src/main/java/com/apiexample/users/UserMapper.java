@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +7,12 @@ import java.util.List;
  * DomainクラスとEntityクラスをマッピングする。
  */
 public class UserMapper {
-    public static User toDomain(UserEntity userEneity) {
+    public static User toDomain(UserEntity userEntity) {
         User user = new User(
-                userEneity.getId()
-                , userEneity.getPassword()
-                , userEneity.getEmail()
+                userEntity.getId()
+                , userEntity.getUsername()
+                , userEntity.getPassword()
+                , userEntity.getEmail()
         );
         return user;
     }
@@ -26,8 +27,9 @@ public class UserMapper {
     public static UserEntity toEntity(User user){
         UserEntity userEntity = new UserEntity(
                 user.getUserId()
-                ,user.getPassword()
-                ,user.getEmail()
+                , user.getUsername()
+                , user.getPassword()
+                , user.getEmail()
         );
 
         return userEntity;

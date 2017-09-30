@@ -1,4 +1,4 @@
-package com.example.common;
+package com.apiexample.common;
 
 import java.io.IOException;
 import javax.servlet.Filter;

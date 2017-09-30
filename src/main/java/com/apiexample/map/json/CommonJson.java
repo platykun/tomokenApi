@@ -1,4 +1,4 @@
-package com.example.map.json;
+package com.apiexample.map.json;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

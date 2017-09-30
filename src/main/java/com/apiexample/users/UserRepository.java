@@ -1,7 +1,9 @@
-package com.example.users;
+package com.apiexample.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  */
@@ -14,4 +16,12 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
      * @return JobEntity
      */
     UserEntity findById(int id);
+
+    /**
+     * ユーザ名をもとにユーザを取得する。
+     *
+     * @param username
+     * @return
+     */
+    List<UserEntity> findByUsername(String username);
 }

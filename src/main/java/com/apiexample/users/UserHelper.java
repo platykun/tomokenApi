@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ public class UserHelper {
     public static UserForm toForm(User user){
         UserForm userForm = new UserForm(
                 user.getUserId()
+                , user.getUsername()
                 , user.getPassword()
                 , user.getEmail()
         );
@@ -26,6 +27,7 @@ public class UserHelper {
     public static User toEntity(UserForm userForm){
         User user = new User(
                 userForm.getId()
+                , userForm.getUsername()
                 , userForm.getPassword()
                 , userForm.getMail()
         );

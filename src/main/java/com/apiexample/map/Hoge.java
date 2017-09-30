@@ -1,4 +1,4 @@
-package com.example.map.json;
+package com.apiexample.map;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ElevationJson {
-    Double elevation;
-    LocationJson location;
-    Double resolution;
+public class Hoge {
+    String method;
+    String id;
 }

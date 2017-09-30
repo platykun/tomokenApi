@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +17,11 @@ public class UserForm {
     // ユーザID
     @NotNull
     int id;
+
+    //ユーザ名
+    @NotNull
+    @Size(min = 1, max = 20)
+    String username;
 
     // パスワード
     @NotNull

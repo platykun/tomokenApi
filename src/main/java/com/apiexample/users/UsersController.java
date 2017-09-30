@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -74,4 +74,19 @@ public class UsersController {
     public int delete(@PathVariable Integer id){
         return 0;
     }
+
+
+    /**
+     * ユーザ名をもとにユーザを検索する。
+     *
+     * @param username
+     * @return
+     */
+    @RequestMapping(value="username")
+    public UserForm getByUsername(@Validated String username){
+        User user = usersService.getUserByUsername(username);
+        UserForm userForm = UserHelper.toForm(user);
+        return userForm;
+    }
+
 }
