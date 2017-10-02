@@ -3,16 +3,15 @@
 ## 詳細
 
 ここに詳細を書く  
-hoge
+hoge  
+[GET /api/template/:username](#POST_apiTemplateId)
 
 ## メソッド
 
-| Method | Description |
-|:--|:--|
-| GET /api/template/:username | get param description |
-| POST /api/template/:id | post param description |
-| PUT /api/template/:id | put param description |
-| DELETE /api/template/:id | delete param description |
+[GET /api/template/:username](#POST_apiTemplateId)  
+`get param description`  
+[POST /api/template/:id](#POST_apiTemplateId)  
+> post param description
 
 ### 変数
 
@@ -21,11 +20,11 @@ hoge
 
 ## リクエストパラメータ
 
-### POST /api/template/:username
+### *POST /api/template/:username*
 
 | Parameters | Descripion | Required | SampleValue |
 |:--|:--|:--|:--|
-| id | ユーザID | yes | 1 |
+| id | ユーザID<br>DBで登録された時のIDを記載する。<br>ユーザはこの値を知らない。 | yes | 1 |
 | username | ユーザ名 | yes | test1 |
 | password | パスワード | yes | password |
 | mail | メールアドレス | yes | test1@test |
@@ -42,7 +41,7 @@ POST /api/template/test1
 }  
 ```
 
-### POST /api/template/:id
+### *POST /api/template/:id* <a name="POST_apiTemplateId">
 
 | Parameters | Descripion | Required | SampleValue |
 |:--|:--|:--|:--|
