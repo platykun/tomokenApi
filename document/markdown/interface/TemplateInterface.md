@@ -23,12 +23,12 @@
 
 ユーザ名を元にユーザを検索し、ユーザを返却する。
 
-| Parameters | Descripion | Required | SampleValue |
+| Parameters | Descripion | Required | class |
 |:--|:--|:--|:--|
-| id | ユーザID<br>DBで登録された時のIDを記載する。<br>ユーザはこの値を知らない。 | yes | 1 |
-| username | ユーザ名 | yes | test1 |
-| password | パスワード | yes | password |
-| mail | メールアドレス | yes | test1@test |
+| id | ユーザID<br>DBで登録された時のIDを記載する。<br>ユーザはこの値を知らない。 | yes | int |
+| username | ユーザ名 | yes | String(min=1, max=20) |
+| password | パスワード | yes | String(min=1, max=20) |
+| mail | メールアドレス | yes | String(min=1, max=20) |
 
 #### Sample Request
 
@@ -54,12 +54,12 @@ POST /api/template/test1
 ここに適宜説明を記載  
 ここに適宜説明を記載  
 
-| Parameters | Descripion | Required | SampleValue |
+| Parameters | Descripion | Required | class |
 |:--|:--|:--|:--|
-| id | ユーザID | yes | 1 |
-| username | ユーザ名 | yes | test1 |
-| password | パスワード | yes | password |
-| mail | メールアドレス | yes | test1@test |
+| id | ユーザID | yes | int |
+| username | ユーザ名 | yes | String(min=1, max=20) |
+| password | パスワード | yes | String(min=1, max=20) |
+| mail | メールアドレス | yes | String(min=1, max=20) |
 
 #### Sample Request
 
