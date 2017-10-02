@@ -1,4 +1,4 @@
-package com.example.users;
+package com.apiexample.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,6 +11,10 @@ public class User {
     // ユーザID
     @Getter
     private int userId;
+
+    // ユーザ名
+    @Getter
+    private String username;
 
     // パスワード
     @Getter

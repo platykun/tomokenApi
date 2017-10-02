@@ -1,6 +1,5 @@
-package com.example.map;
+package com.apiexample.map.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Hoge {
-    String method;
-    String id;
+public class LocationJson{
+    Double lat;
+    Double lng;
 }
