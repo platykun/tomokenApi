@@ -28,4 +28,28 @@ public class UserEntity {
 
     // メールアドレス
     private String email;
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+
+        //引数のobjetのnullチェック、型チェックを行う。
+        if (object == null || !(object instanceof UserEntity)) {
+            return false;
+        }
+
+        UserEntity o = (UserEntity) object;
+
+        if (this.id == o.getId()
+                && this.username.equals(o.getUsername())
+                && this.password.equals(o.getPassword())
+                && this.email.equals(o.getEmail()))
+        {
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

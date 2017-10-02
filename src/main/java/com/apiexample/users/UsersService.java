@@ -31,7 +31,9 @@ public class UsersService {
      * @return ユーザ
      */
     public User getUserById(int id){
-        UserEntity userEntity = userRepository.getOne(id);
+        UserEntity userEntity = userRepository.findById(id);
+        //getOneメソッドではなぜか値が取得できない。
+        //UserEntity userEntity = userRepository.getOne(id);
         User user = UserMapper.toDomain(userEntity);
 
         return user;

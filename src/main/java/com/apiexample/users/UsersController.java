@@ -2,10 +2,7 @@ package com.apiexample.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -57,7 +54,7 @@ public class UsersController {
      * @return 更新後ユーザ
      */
     @RequestMapping(value="{id}", method = RequestMethod.PUT)
-    public UserForm updateUser(@PathVariable Integer id, @Validated UserForm userForm){
+    public UserForm updateUser(@PathVariable Integer id, @RequestBody UserForm userForm){
         User user = UserHelper.toEntity(userForm);
         User updatedUser = usersService.updateUser(user);
         UserForm updatedUserForm = UserHelper.toForm(updatedUser);
@@ -68,19 +65,22 @@ public class UsersController {
      * ユーザを削除する。
      *
      * @param id 削除ユーザID
-     * @return 削除結果
+     * @return 削除フラグ(0:削除成功 -1:ユーザ不在)
      */
     @RequestMapping(value="{id}", method = RequestMethod.DELETE)
     public int delete(@PathVariable Integer id){
-        return 0;
+
+        int result = usersService.deleteUserById(id);
+
+        return result;
     }
 
 
     /**
      * ユーザ名をもとにユーザを検索する。
      *
-     * @param username
-     * @return
+     * @param username ユーザ名
+     * @return ユーザに該当するユーザ
      */
     @RequestMapping(value="username")
     public UserForm getByUsername(@Validated String username){
