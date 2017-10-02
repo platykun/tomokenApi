@@ -2,14 +2,14 @@
 
 ## 詳細
 
-ここに詳細を書く  
+ここに詳細を書く  
 ここに詳細を書く
 
 ## メソッド
 
-[GET /api/template/:username](#POST_apiTemplateId)  
+#### [GET /api/template/:username](#POST_apiTemplateId)  
 `ひとことコメントを記載`  
-[POST /api/template/:id](#POST_apiTemplateId)  
+#### [POST /api/template/:id](#POST_apiTemplateId)  
 `(例)テンプレートを登録する`  
 
 ### 変数
